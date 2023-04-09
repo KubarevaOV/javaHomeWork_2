@@ -29,19 +29,8 @@ public class LList {
         size++;
     }
 
-    public void remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
-        if (index == 0) {
-            head = head.next;
-        } else {
-            Node current = head;
-            for (int i = 0; i < index - 1; i++) {
-                current = current.next;
-            }
-            current.next = current.next.next;
-        }
+    public void removeHead() {
+        head = head.next;
         size--;
     }
 }
